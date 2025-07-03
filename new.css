@@ -1,0 +1,106 @@
+#bg {
+    width: 100%; 
+    height: 100vh; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: -1; 
+    
+}
+
+#play {
+    z-index: 4;
+    background-color: rgb(3, 22, 197);
+    margin: 22px;
+    padding: 22px;
+    border: 2px solid black;
+    width: 100px;
+    color: white;
+    font: 2em sans-serif;
+}
+
+#play:hover {
+    transform: scale(1.25);
+}
+
+.zombie {
+    width: 110px;
+    position: absolute;
+    top: 85vh;
+    left: 100vw;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#zom {
+    object-fit: cover;
+    height: 100px;
+}
+
+.soldier {
+    
+    height: 135px;
+    width: 125px;
+    position: absolute;
+    top: 80vh;
+    left: 10vw;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sol {
+    object-fit: cover;
+    height: 130px;
+    transition: all 0.2s ease;
+    
+}
+.score {
+    position: absolute;
+    font-size: 25px;
+    color: black;
+    top: 5vh;
+    left: 80vw;
+    height: 5px;
+}
+
+@keyframes zombiewalk {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: 0vw;
+    }
+}
+
+@keyframes soljump {
+    0% {
+        top: 80vh;
+    }
+    40% {
+        top: 60vh;
+    }
+    60% {
+        top: 60vh;
+    }
+    100% {
+        top: 80vh;
+    }
+}
+#sol.ducked {
+    height: 80px; 
+    width: 125px;  
+    object-fit: unset;
+    transition: all 0.2s ease;
+    transform: translateY(26px) ;
+    
+     
+}
+
+
+
+
