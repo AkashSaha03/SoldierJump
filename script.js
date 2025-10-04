@@ -19,9 +19,9 @@ a.addEventListener("click", () => {
     if (video.paused) {
         video.play();
         isGameRunning = true;
-        sc2 = 0; // Reset score
-        sc.innerHTML = sc2; // Reset score display
-        a.style.display = "none"; // Hide play button
+        sc2 = 0; 
+        sc.innerHTML = sc2;
+        a.style.display = "none"; 
 
         let initialDelay = Math.floor(5000 + Math.random() * 7001);
         console.log(`Initial delay: ${initialDelay}ms`);
@@ -30,7 +30,7 @@ a.addEventListener("click", () => {
             animateWithDelay(z);
         }, initialDelay);
 
-        checkCollision(); // Start the collision detection loop
+        checkCollision(); 
     }
 });
 
@@ -79,10 +79,10 @@ function checkCollision() {
     if (!isGameRunning) return;
 
     if (isOverlapping(z, s)) {
-        isGameRunning = false; // Stop the game loop
+        isGameRunning = false; 
         video.pause();
         stopAnimations();
-        a.style.display = "block"; // Show play button again
+        a.style.display = "block"; 
         console.log("Collision detected! Game paused.");
     } else {
         requestAnimationFrame(checkCollision);
@@ -92,20 +92,20 @@ function checkCollision() {
 function stopAnimations() {
     [z, s].forEach((element) => {
         element.style.animation = "none";
-        element.offsetHeight; // Trigger reflow to reset animations
+        element.offsetHeight; 
     });
 }
 
 document.addEventListener("keydown", (e) => {
     if (e.code === "ArrowDown" && !s2.classList.contains("ducked")) {
-        s2.classList.add("ducked"); // Add the "ducked" class
+        s2.classList.add("ducked"); 
     }
 });
 
 document.addEventListener("keyup", (e) => {
     if (e.code === "ArrowDown" && s2.classList.contains("ducked")) {
-        s2.classList.remove("ducked"); // Remove the "ducked" class
+        s2.classList.remove("ducked"); 
     }
 });
 
-// solduck();
+
